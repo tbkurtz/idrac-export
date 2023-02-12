@@ -18,4 +18,4 @@ RUN echo '[Install]' >> "/lib/systemd/system/idrac-export.service"
 RUN echo 'WantedBy=multi-user.target' >> "/lib/systemd/system/idrac-export.service"
 
 #CMD ["/bin/bash","/app/idrac-export.sh"]
-#ENTRYPOINT ["/bin/bash", "/app/idrac-export.sh"]
+ENTRYPOINT ["service", "idrac-export", "start"]
