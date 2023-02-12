@@ -1,14 +1,7 @@
 FROM ubuntu:latest
 
-# install ipmitool
-#RUN apk update
+# install packages
 RUN apt-get -y update
 RUN apt-get -y install ipmitool netcat
-
-# copy service file
-# COPY idrac-export.service /etc/systemd/system/idrac-export.service
-
-# Enable the service so it starts at boot
-#RUN systemctl enable idrac-export.service
 
 CMD ["/bin/bash","/app/idrac-export.sh"]
