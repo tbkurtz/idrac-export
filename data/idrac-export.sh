@@ -10,9 +10,9 @@ LOG='idrac.log'
 /bin/touch "$LOG"; /bin/chmod 777 "$LOG"
 while true; do
     {
-        /bin/bash scripts/fanspeed.sh "$HOST" "$ADDR" "$USER" "$PASS"
-        /bin/bash scripts/pwr_consumption.sh "$HOST" "$ADDR" "$USER" "$PASS"
-        /bin/bash scripts/temp_board.sh "$HOST" "$ADDR" "$USER" "$PASS"
+        /bin/bash /app/scripts/fanspeed.sh "$HOST" "$ADDR" "$USER" "$PASS"
+        /bin/bash /app/scripts/pwr_consumption.sh "$HOST" "$ADDR" "$USER" "$PASS"
+        /bin/bash /app/scripts/temp_board.sh "$HOST" "$ADDR" "$USER" "$PASS"
     } &> "$LOG"
     sleep 5
 done
