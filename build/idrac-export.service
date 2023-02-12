@@ -1,0 +1,9 @@
+[Unit]
+Description=iDRAC Export Script
+
+[Service]
+ExecStart=/bin/bash -c "while true; do /app/idrac-export.sh; sleep 5; done"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
